@@ -16,6 +16,14 @@ a:link, a:visited, a:active {
     color: blanchedalmond;
 }
 
+    a:link{ color: #ffffff; text-decoration: none}
+
+    a:active{ color: #5a5a5a; text-decoration: none}
+
+    a:visited{ color: #b8b1b1; text-decoration: none}
+
+    a:hover{ color: hsl(61, 100%, 50%); font-size: 22px}
+
 html{
     background-image: url(../img/fondo-sitio.jpg);
 }
@@ -95,7 +103,7 @@ h2{
     margin-left: 0px;
     margin-bottom: 10px;
     font-family: 'DynaPuff', cursive;
-    font-weight: 500;
+    font-weight: 400;
     
 }
 
@@ -146,7 +154,7 @@ footer .menuFooter li{
     
 }
 
-.dirección p{
+.direccion p{
     display:flex;
     flex-direction: column;
     font-size:13px;
@@ -174,9 +182,8 @@ h3{
     margin-left: 0px;
     margin-bottom: 10px;
     font-family: 'DynaPuff', cursive;
-    font-weight: 500; 
+    font-weight: 400; 
     font-size: 15px;
-    font-weight:400;
 }
 
 .facebook img{
@@ -190,3 +197,182 @@ h3{
     max-width: 30px;
     max-height: 30px;
     }
+
+/*CSS DE LA PÁGINA PRODUCTOS*/
+
+.grid-container_productos {
+    display:grid;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 1rem;
+    min-height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0,5fr 1fr 1fr 1fr 0,5fr;
+    grid-template-areas: 
+        "header header"
+        "nav nav"
+        "section1 section1"
+        "section2 section2"
+        "footer footer";
+    }
+
+    .section__arriba{
+        display:flex;
+        flex-direction:row;
+        gap: 2rem; 
+        grid-area: section1;
+    }
+
+    .section__abajo{
+        display:flex;
+        flex-direction:row;
+        gap: 2rem;
+        grid-area: section2;
+    }
+    
+    .imagen{
+        width: 100%; 
+    }  
+    .tarjeta_cuadro{
+        background-color: rgb(0, 0, 0, 60%);
+        text-align: center;
+        margin-top: 20px;
+        box-shadow: 14px 16px 20px;
+
+    }
+    .tarjeta_encastre{
+        background-color: rgb(0, 0, 0, 60%);
+        text-align: center;
+        box-shadow: 14px 16px 20px;
+        margin-top: 20px;
+    }
+
+    .tarjeta_abecedario{
+        background-color: rgb(0, 0, 0, 60%);
+        text-align: center;
+        box-shadow: 14px 16px 20px;
+
+    }
+
+    .tarjeta_souvenirs{
+        background-color: rgb(0, 0, 0, 60%);
+        text-align: center;
+        box-shadow: 14px 16px 20px;
+    }
+
+
+    .Info {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+        align-items: stretch;
+    }
+
+    .link_productos{
+        text-decoration: none;
+        background-color: #65b375;
+        color: white;
+        padding: 1rem;
+        border-radius: 10px;
+        font-family: 'DynaPuff', cursive;
+        font-weight: 400; 
+        font-size: 20px;
+        }
+
+
+    /*CSS DE LA PÁGINA SABÍAS QUE...*/
+
+    
+    .grid-container_sabias-que {
+            display:grid;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            column-gap: 1rem;
+            min-height: 100vh;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 0,5fr 1fr 1fr 1fr 0,5fr;
+            grid-template-areas: 
+                "header header"
+                "nav nav"
+                "globasArriba globasArriba"
+                "globasAbajo globasAbajo"
+                "footer footer";
+            }
+
+            
+        
+            .section__globas-arriba{
+                display:flex;
+                flex-direction:row;
+                gap: 2rem; 
+                grid-area: globasArriba;
+
+            }
+        
+            .section__globas-abajo{
+                display:flex;
+                flex-direction:row;
+                gap: 2rem;
+                grid-area: globasAbajo;
+            }
+            
+            .imagen{
+                width: 100%; 
+            }  
+            .tarjeta_sabias-torre{
+                background-color: rgb(0, 0, 0, 1%);
+                text-align: center;
+                margin-top: 20px;
+                }
+                
+            .tarjeta_sabias-abecedario{
+                background-color: rgb(0, 0, 0, 1%);
+                text-align: center;
+                margin-top: 20px;
+            }
+        
+            .tarjeta_sabias-cubos{
+                background-color: rgb(0, 0, 0, 1%);
+                text-align: center;
+        
+            }
+        
+            .tarjeta_sabias-puzzle{
+                background-color: rgb(0, 0, 0, 1%);
+                text-align: center;
+            }
+
+            .negroTorres{
+                width: 400px;
+                color: black;
+                position: absolute;
+                margin-top: 100px;
+            }
+
+            .negroAbc{
+                color: black;
+                width: 400px;
+                color: black;
+                position: absolute;
+                margin-top: 100px;
+            }
+
+            .negroCubos{
+                color: black;
+                width: 400px;
+                color: black;
+                position: absolute;
+                margin-top: 100px;
+            }
+
+            .negroGloba{
+                color: black;
+                width: 400px;
+                color: black;
+                position: absolute;
+                margin-top: 100px;
+            }
+
