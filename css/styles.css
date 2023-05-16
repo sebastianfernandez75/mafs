@@ -24,18 +24,18 @@ a:link, a:visited, a:active {
 
     a:hover{ color: hsl(61, 100%, 50%); font-size: 22px}
 
-html{
+body{
     background-image: url(../img/fondo-sitio.jpg);
 }
 
-.grid-container {
+.grid-container{
     display:grid;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     min-height: 100vh;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0,1fr 0,2fr 1fr 0,2fr;
+    grid-template-rows: 0,1fr 0,1fr 1fr 0,5fr;
     grid-template-areas: 
         "header header"
         "nav nav"
@@ -45,15 +45,19 @@ html{
 
 /* Encabezado + nav */
 
-.header {
+.encabezado{
     display: flex;
-    justify-content: top center;
+    width: 1000px;
+    height:170px;
+    justify-content:center;
     grid-area: header;
+    background-image:url(../img/header_fondo.png);
 }
 
-.header img{
-    width: 1000px;
-    height: auto;
+.logo_mafs{
+    display: flex;
+    width: auto;
+    padding-bottom: 20px;
 }
 
 nav {
@@ -80,14 +84,24 @@ nav .menu li{
     
 }
 
+.linkMenu{
+    transition: font-size 1s;
+}
+
+.linkMenu:hover{
+    color:gold;
+    font-size: 22px;
+}
+
 /* ............CSS DE LA PAGINA INDEX.............. */
 
 .section {
     background-color:rgb(121, 196, 113, 60%);
     grid-area: section;
     border-radius: 10px;
-    margin: 15px;
-    margin-bottom: 0px;
+    gap: 1rem;
+    margin: 0px;
+    margin-top: 20px;
 
 }
 
@@ -125,7 +139,7 @@ p{
 .aside {
     grid-area: aside;
     margin-top: 15px;
-    margin-right: 8px;
+    margin-left: 20px;
     margin-bottom: 0px;
 }
 
@@ -140,8 +154,10 @@ hr{
 
 footer{
     display: flex;
+    flex-direction: row;
+    max-width: 1000px;
+    height: 200px;
     align-items: center;
-    background-color: rgba(255, 145, 0, 0.60);
     padding: 1rem; 
     margin: 15px;
     grid-area: footer;
@@ -150,16 +166,33 @@ footer{
 
 }
 
-
-.menuFooter li{
+.menuFooter {
+    display: flex;
+    flex-direction: column;
     list-style: none;
-    padding:5px;
+    padding:7px;
+    margin-top: 10px;
     margin-left: 15px;
     border-radius: 6px;
     font-family: 'DynaPuff', cursive;
     font-weight:400;
     font-size: 16px; 
     
+}
+
+.linkFooter{
+    display: flex;
+    margin: 5px;
+}
+
+.linkFooter{
+    transition: font-size 1s;
+    
+}
+
+.linkFooter:hover{
+    color:gold;
+    font-size: 17px;
 }
 
 .direccion p{
@@ -169,6 +202,7 @@ footer{
     padding:7px;
     border:none;
     margin: none;
+    
     
 }
 
@@ -206,6 +240,8 @@ h3{
     max-height: 30px;
     }
 
+
+
 /*.............CSS DE LA PÁGINA PRODUCTOS..............*/
 
 .grid-container_productos {
@@ -216,7 +252,7 @@ h3{
     column-gap: 1rem;
     min-height: 100vh;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0,5fr 1fr 1fr 1fr 0,5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 0,5fr;
     grid-template-areas: 
         "header header"
         "nav nav"
@@ -293,6 +329,8 @@ h3{
         font-weight: 400; 
         font-size: 20px;
         }
+
+        
 
 
     /*...............CSS DE LA PÁGINA SABÍAS QUE.............*/
@@ -388,7 +426,10 @@ h3{
                 color: black;
                 position: absolute;
                 margin-top: 100px;
-            }    
+            }   
+            
+            
+            
 
 
 /*..............CSS DE LA PAGINA DE EXPERIENCIAS...............*/ 
@@ -423,24 +464,27 @@ section.experiencias{
         flex-direction:column;
         text-align: center;
         max-width: 100%;
+        margin-left: 0%;
+        padding-left: 0%;
         
 }
 
 .h2Exp{
     display: flex;
     margin:30px;
-    margin-left: 50px;
+    margin-left:0px;
 }
 
     .tarjetaExperiencias{
         display:flex;
-        margin-left: 50px;
         padding-bottom: 20px;
-
+        margin-right:20px;
+        border-radius: 6px;
     }
 
     .textoExperiencia{
         display:flex;
+        background-color: rgba(0, 0, 0, 0.6);
     }
 
     .imagen_exp{
@@ -461,149 +505,220 @@ section.experiencias{
     
     }
 
-/* .................MEDIA QUERIES.................*/
 
-@media (max-width: 600px) {
+/*..............CSS DE LA PAGINA DE CONTACTO...............*/ 
 
-    a:link{ color: #ffffff; text-decoration: none}
+.grid-container_contacto {
+    display:grid;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 1rem;
+    min-height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0,5fr 1fr 1fr 0,5fr;
+    grid-template-areas: 
+        "header header"
+        "nav nav"
+        "section1 section2"
+        "footer footer"
+    }
 
-    a:active{ color: #5a5a5a; text-decoration: none}
+    .encabezado{
+        display: flex;
+        width: 1000px;
+        min-height: 170px;
+        justify-content:center;
+        grid-area: header;
+        background-image:url(../img/header_fondo.png);
+    }
+    
+    .logo_mafs{
+        display: flex;
+        width: auto;
+        padding-bottom: 20px;
+    }
+    
+    nav {
+        grid-area: nav;
 
-    a:visited{ color: #b8b1b1; text-decoration: none}
-
-    a:hover{ color: hsl(61, 100%, 50%); font-size: 17px}
-
-html{
-    background-image: url(../img/fondo-sitio.jpg);
-}
-
-/* MEDIA QUERIE DEL ENCABEZADFO + NAV */
-
-.grid-container {
+    }
+    
+    nav .menu {
+        display: flex;
+        max-width: 1000px;
+        height: 70px;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 50%);
+    }
+    
+    nav .menu li{
+        text-underline-offset: none;
+        list-style: none;
+        padding: 10px;
+        border: solid 1px gold;
+        border-radius: 6px;
+        font-family: 'DynaPuff', cursive;
+        font-weight:400;
+        font-size: 20px;
+        
+    }
+    
+    .linkMenu{
+        transition: font-size 1s;
+    }
+    
+    .linkMenu:hover{
+        color:gold;
+        font-size: 22px;
+    }
+    
+.infoContacto{
     display:flex;
     flex-direction: column;
-}
-
-.header {
-    display: flex;
-    justify-content: top center;
-    height: auto;
-}
-
-.header img{
-    width: 600px;
-    height: 120px;
-
-}
-
-nav {
-    grid-area: nav;
-}
-
-nav .menu {
-    display: flex;
-    height: 70px;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 50%);
-}
-
-nav .menu li{
-    text-underline-offset: none;
-    list-style: none;
-    padding: 10px;
-    border: solid 1px gold;
-    border-radius: 6px;
-    font-family: 'DynaPuff', cursive;
-    font-weight:400;
-    font-size: 15px;
-    
-}
-
-/* MEDIA QUEIRE DE LA PÁGINA INDEX */
-
-.section {
-    background-color:rgb(121, 196, 113, 60%);
+    max-width: 100%;
+    background-color: rgb(69, 160, 73, 60%);
     border-radius: 10px;
-    margin: 30px;
-}
+    margin-top: 20px;
+    grid-area: section1;
+    }
 
-h1 {
-    color:rgb(255, 238, 0);
-    padding: 20px;
-    padding-bottom: 10px;
-    margin-left:20px;
-    font-size: 30px;
-    font-family: 'DynaPuff', cursive;
-    font-weight: 500;
-}
-    
-h2{
-    color:rgb(255, 238, 0);
-    padding-top: 10pxpx;
-    padding-left: 0px;
-    padding-bottom: 10px;
-    margin-top:20px;
-    margin-left: 0px;
-    margin-bottom: 10px;
-    font-family: 'DynaPuff', cursive;
-    font-weight: 400;
+.tituloContacto{
+    display:flex;
+    font-size: 23px;
+    margin: 42px;
+    margin-bottom: 5px;
+}  
+
+p.parrafoContacto{
+    display:flex;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin:0px;
+    line-height: 1.5rem;
     
 }
 
-p{
-    color:rgb(241, 233, 233);
-    padding:40px;  
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-family: "MAFS";
-    font-size: 16px;
+.logo_ms{
+    display:flex;
+    width: 30%;
+    margin: 42px;
+    margin-top: 0px;
 }
 
-.aside {
-margin:auto;
-
+.formulario{
+    display:flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin-top: 20px;
+    grid-area: section2;
+    
 }
 
-hr{
-    width:500px;
-    margin: 10px;
-    margin-left:0px;
-}
+input, textarea {
+        display: flex;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
 
-/* Footer */
+input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    label {
+        font-weight: 200;
+        display: flex;
+        margin-bottom: 10px;
+        color: #ffffff;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    textarea {
+        display:flex;
+        width: 100%;
+    }
+
+    .dropdown-menu{
+        font-size: 15px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: black;
+        background-color: rgb(0, 0, 0,80%);
+    }
+
+    .dropdown-item:hover{
+        font-size: 16px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0,80%);
+    }
 
 footer{
     display: flex;
+    width: 500px;
     align-items: center;
-    max-width: 600px;
     background-color: rgba(255, 145, 0, 0.60);
-    padding: 1rem; 
-    margin: 15px;
+    grid-area: footer;
     border-radius: 10px;
     justify-content: space-evenly;
 
 }
 
-footer .menuFooter li{
+ul.menuFooter_contacto{
+    display: flex;
+    flex-direction: column;
     list-style: none;
-    padding:5px;
-    margin-left: 15px;
     border-radius: 6px;
     font-family: 'DynaPuff', cursive;
     font-weight:400;
-    font-size: 16px;
-    
+    font-size: 16px; 
+    margin-top:20px
+
 }
 
-.direccion p{
+.linkFooter_contacto{
+    display: flex;
+    margin: 5px;
+
+}
+
+.linkFooter_contacto{
+    transition: font-size 1s;
+}
+
+.linkFooter_contacto:hover{
+    color:gold;
+    font-size: 17px;
+}
+
+footer.direccion__p{
     display:flex;
     flex-direction: column;
     font-size:13px;
     padding:7px;
     border:none;
     margin: none;
+    padding: none;
+    line-height: normal;
     
+}
+
+p{
+    margin-bottom: 0%;
 }
 
 .redes{
@@ -638,16 +753,219 @@ h3{
 .instagram img{
     max-width: 30px;
     max-height: 30px;
+    }  
+
+
+
+/* .............MEDIA QUERIES 600PX.................*/
+
+@media (max-width: 600px) {
+
+
+html{
+    background-image: url(../img/fondo-sitio.jpg);
+}
+
+/* MEDIA QUERIE DEL ENCABEZADO + NAV 600px */
+
+.grid-container{
+    display:flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+    }
+
+
+.encabezado{
+    display:flex;
+    width: 600px;
+    height:170px;
+    justify-content:center;
+    grid-area: header;
+    background-image:url(../img/header_fondo.png);
+}
+
+.logo_mafs{
+    display: flex;
+    width: auto;
+    padding-bottom:20px;
+}
+
+nav {
+    display: flex;
+}
+
+nav .menu {
+    display: flex;
+    width: 600px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 50%);
+}
+
+nav .menu li{
+    display: flex;
+    width: 110px;
+    font-size: 13px; 
+    justify-content: space-evenly;
+    text-underline-offset: none;
+    list-style: none;
+    padding: 10px;
+    border: solid 1px gold;
+    border-radius: 6px;
+    font-family: 'DynaPuff', cursive;
+    font-weight:400;
+}
+
+.linkMenu{
+    transition: font-size 1s;
+}
+
+.linkMenu:hover{
+    color:gold;
+    font-size: 17px;
+}  
+
+
+/* MEDIA QUERIE DE LA PÁGINA INDEX 600px */
+
+
+h1 {
+    color:rgb(255, 238, 0);
+    padding: 20px;
+    padding-bottom: 10px;
+    margin-left:20px;
+    font-size: 30px;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 500;
+}
+
+.section {
+    width: auto;
+    background-color:rgb(121, 196, 113, 60%);
+    border-radius: 10px;
+    margin: 30px;
+}
+    
+h2{
+    color:rgb(255, 238, 0);
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    margin-top:15px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 400;
+    
+}
+
+p{
+    color:rgb(241, 233, 233);
+    padding:40px;  
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: "MAFS";
+    font-size: 15px;
+}
+
+.aside {
+margin:auto;
+
+}
+
+hr{
+    width:500px;
+    margin: 10px;
+    margin-left:0px;
+}
+
+/* Footer */
+
+footer{
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    background-color: rgba(255, 145, 0, 0.60);
+    padding: 1rem; 
+    margin: 15px;
+    border-radius: 10px;
+    justify-content: space-evenly;
+
+}
+
+footer .menuFooter li{
+    list-style: none;
+    margin-left: 15px;
+    border-radius: 6px;
+    font-family: 'DynaPuff', cursive;
+    font-weight:400;
+    font-size: 16px;
+    
+}
+
+.linkFooter{
+    display: flex;
+
+}
+
+.direccion p{
+    display:flex;
+    flex-direction: column;
+    font-size:13px;
+    padding:7px;
+    border:none;
+    margin: none;
+    
+}
+
+.redes{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+    padding: 0px;
+    border:0px;
+}
+
+h3{
+    color:rgb(255, 255, 255);
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    margin-top:20px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 400; 
+    font-size: 15px;
+}
+
+.facebook img{
+        max-width: 30px;
+        max-height: 30px;
+        margin: 10px;
+        margin-top:5px;
+    }
+
+.instagram img{
+    max-width: 30px;
+    max-height: 30px;
     }
 
 }
 
+/*........MEDIA QUERIE DE LA PÁG PRODUCTOS 600px............*/
 
-/*MEDIA QUERIE DE LA PÁGINA PRODUCTOS*/
+
+@media (max-width: 600px) {
+
+    a:hover{ color: hsl(61, 100%, 50%); font-size: 17px}
 
 .grid-container_productos {
     display:grid;
-    max-width: 1000px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     column-gap: 1rem;
@@ -661,6 +979,53 @@ h3{
         "section2 section2"
         "footer footer";
     }
+
+    .encabezado{
+        width: 600px;
+        height:170px;
+        justify-content:center;
+        grid-area: header;
+        background-image:url(../img/header_fondo.png);
+    }
+    
+    .logo_mafs{
+        display: flex;
+        width: auto;
+        padding-bottom:20px;
+    }
+    
+    nav {
+        grid-area: nav;
+    }
+    
+    nav .menu {
+        width: 600px;
+        display: flex;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 50%);
+    }
+    
+    nav .menu li{
+        width: 110px;
+        font-size: 13px; 
+        justify-content: space-evenly;
+        text-underline-offset: none;
+        list-style: none;
+        padding: 10px;
+        border: solid 1px gold;
+        border-radius: 6px;
+        font-family: 'DynaPuff', cursive;
+        font-weight:400;
+    }
+
+    .linkMenu{
+        transition: font-size 1s;
+    }
+    
+    .linkMenu:hover{
+        color:gold;
+        font-size: 17px;
+    }  
 
     .section__arriba{
         display:flex;
@@ -726,108 +1091,157 @@ h3{
         font-size: 20px;
         }
 
+    }
 
-    /*........MEDIA QUERIES DE LA PÁGINA SABÍAS QUE.......*/
 
-    
+    /*........MEDIA QUERIES DE LA PÁGINA SABÍAS QUE 600px.......*/
+
+    @media (max-width: 600px) {
+
+    a:hover{ color: hsl(61, 100%, 50%); font-size: 17px}
+
     .grid-container_sabias-que {
             display:grid;
-            max-width: 1000px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
             column-gap: 1rem;
             min-height: 100vh;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 0,5fr 1fr 1fr 1fr 0,5fr;
+            grid-template-columns: 1fr;
+            grid-template-rows: 0,5fr 1fr 1fr 1fr 1fr 1fr 0,5fr;
             grid-template-areas: 
-                "header header"
-                "nav nav"
-                "globasArriba globasArriba"
-                "globasAbajo globasAbajo"
-                "footer footer";
+                "header"
+                "nav"
+                "globaTorre"
+                "globaCubos"
+                "globaAbc"
+                "globaPuzzle"
+                "footer";
             }
 
+            nav {
+                grid-area: nav;
+            }
             
-        
-            .section__globas-arriba{
-                display:flex;
-                flex-direction:row;
-                gap: 2rem; 
-                grid-area: globasArriba;
+            nav .menu {
+                display: flex;
+                flex-direction: row;
+                width: 600px;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 50%);
+            }
+            
+            nav .menu li{
+                width: 110px;
+                font-size: 15px; 
+                justify-content: space-evenly;
+                text-underline-offset: none;
+                list-style: none;
+                padding: 10px;
+                border: solid 1px gold;
+                border-radius: 6px;
+                font-family: 'DynaPuff', cursive;
+                font-weight:400;
+            }
 
-            }
-        
-            .section__globas-abajo{
-                display:flex;
-                flex-direction:row;
-                gap: 2rem;
-                grid-area: globasAbajo;
+            .linkMenu{
+                transition: font-size 1s;
             }
             
-            .imagen{
-                width: 100%; 
-            }  
+            .linkMenu:hover{
+                color:gold;
+                font-size: 17px;
+            } 
+
+            .globas-arriba{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
             .tarjeta_sabias-torre{
+                width: 85%;
                 background-color: rgb(0, 0, 0, 1%);
                 text-align: center;
                 margin-top: 20px;
+                justify-content: center;
+                align-items: center;
                 }
                 
-            .tarjeta_sabias-abecedario{
+            .tarjeta_sabias-cubos{
+                width: 85%;
                 background-color: rgb(0, 0, 0, 1%);
                 text-align: center;
                 margin-top: 20px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .globas-abajo{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
         
-            .tarjeta_sabias-cubos{
+            .tarjeta_sabias-abecedario{
+                width: 85%;
                 background-color: rgb(0, 0, 0, 1%);
                 text-align: center;
+                justify-content: center;
+                align-items: center;
         
             }
         
             .tarjeta_sabias-puzzle{
+                width: 90%;
                 background-color: rgb(0, 0, 0, 1%);
                 text-align: center;
+                justify-content: center;
+                align-items: center;
             }
 
             .negroTorres{
+                display:flex;
+                width: 450px;
                 width: 400px;
                 color: black;
-                position: absolute;
-                margin-top: 100px;
             }
 
             .negroAbc{
+                display: flex;
                 color: black;
                 width: 400px;
                 color: black;
-                position: absolute;
-                margin-top: 100px;
             }
 
             .negroCubos{
+                display: flex;
                 color: black;
                 width: 400px;
                 color: black;
-                position: absolute;
-                margin-top: 100px;
             }
 
             .negroGloba{
+                display: flex;
                 color: black;
                 width: 400px;
                 color: black;
-                position: absolute;
-                margin-top: 100px;
             }
 
+        }            
 
-/*........MEDIA QUERIES DE LA PÁGINA EXPERIENCIAS.......*/
 
+/*.....MEDIA QUERIES DE LA PÁGINA EXPERIENCIAS 600px...*/
+
+@media (max-width: 600px) {
+
+    a:hover{ color: hsl(61, 100%, 50%); font-size: 17px}
 
 .grid-container_experiencias {
     display:grid;
-    max-width: 1000px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     column-gap: 1rem;
@@ -844,40 +1258,78 @@ h3{
         "footer"
     }
 
+    .encabezado{
+        display: flex;
+        width: 600px;
+        min-height: 170px;
+        justify-content:center;
+        grid-area: header;
+        background-image:url(../img/header_fondo.png);
+    }
+
+    nav {
+        grid-area: nav;
+    }
     
-main{
-    display: flex;
-    align-items: center;
-}
+    nav .menu {
+        display: flex;
+        flex-direction: row;
+        width: 600px;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 50%);
+    }
+    
+    nav .menu li{
+        width: 110px;
+        font-size: 15px; 
+        justify-content: space-evenly;
+        text-underline-offset: none;
+        list-style: none;
+        padding: 10px;
+        border: solid 1px gold;
+        border-radius: 6px;
+        font-family: 'DynaPuff', cursive;
+        font-weight:400;
+    }
+
+    .linkMenu{
+        transition: font-size 1s;
+    }
+    
+    .linkMenu:hover{
+        color:gold;
+        font-size: 17px;
+    }     
 
 section.experiencias{
         display:flex;
         flex-direction:column;
         text-align: center;
         max-width: 100%;
+        justify-content: center;
+        align-items: center;
         
 }
 
 .h2Exp{
     display: flex;
-    margin:30px;
-    margin-left: 50px;
 }
 
     .tarjetaExperiencias{
         display:flex;
-        margin-left: 50px;
+        margin-left: 20px;
         padding-bottom: 20px;
 
     }
 
     .textoExperiencia{
         display:flex;
+        width: 80%;
     }
 
     .imagen_exp{
         display:flex;
-        width: 80%;
+        width: 100%;
 
     }
 
@@ -890,5 +1342,1019 @@ section.experiencias{
         grid-area: footer;
         border-radius: 10px;
         justify-content: space-evenly;
+    }
+
+}    
+
+/* .......... QUERIES CONTACTO 600PX .............*/
+
+@media (max-width: 600px) {
+
+    a:hover{ color: hsl(61, 100%, 50%); font-size: 17px}
+
+.grid-container_contacto {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 1rem;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0,5fr 1fr 1fr 0,5fr;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "infoContacto"
+        "formulario"
+        "footer"
+    }
+
+    .encabezado{
+        display: flex;
+        width: 600px;
+        min-height: 170px;
+        justify-content:center;
+        grid-area: header;
+        background-image:url(../img/header_fondo.png);
+    }
+
+    nav {
+        grid-area: nav;
+    }
+    
+    nav .menu {
+        display: flex;
+        flex-direction: row;
+        width: 600px;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 50%);
+    }
+    
+    nav .menu li{
+        width: 110px;
+        font-size: 15px; 
+        text-underline-offset: none;
+        list-style: none;
+        border: solid 1px gold;
+        border-radius: 6px;
+        font-family: 'DynaPuff', cursive;
+        font-weight:400;
+    }
+
+    .linkMenu{
+        transition: font-size 1s;
+    }
+    
+    .linkMenu:hover{
+        color:gold;
+        font-size: 17px;
+    }     
+
+    
+.infoContacto{
+    display:flex;
+    flex-direction: column;
+    max-width: 90%;
+    background-color: rgb(69, 160, 73, 60%);
+    border-radius: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    }
+
+.tituloContacto{
+    display:flex;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}  
+
+p.parrafoContacto{
+    display:flex;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 0PX;
+    line-height: 1.5rem;
+    font-size: 17px;
+    text-align: center;
+    white-space: pre-line;
+    
+}
+
+.logo_ms{
+    display:flex;
+    width: 30%;
+    margin: 42px;
+    margin-top: 0px;
+}
+
+.formulario{
+    display:flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+input, textarea {
+        display: flex;
+        width: 400PX;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+
+input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    label {
+        font-weight: 200;
+        display: flex;
+        margin-bottom: 10px;
+        color: #ffffff;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    textarea {
+        display:flex;
+        width: 100%;
+    }
+
+    .dropdown-menu{
+        font-size: 15px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: black;
+        background-color: rgb(0, 0, 0,80%);
+    }
+
+    .dropdown-item:hover{
+        font-size: 16px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0,80%);
+    }
+
+footer{
+    display: flex;
+    width: 320px;
+    align-items: center;
+    background-color: rgba(255, 145, 0, 0.60);
+    border-radius: 10px;
+    justify-content: space-evenly;
+
+}
+
+
+footer.direccion__p{
+    display:flex;
+    flex-direction: row;
+    font-size:13px;
+    padding:7px;
+    border:none;
+    margin: none;
+    padding: none;
+    line-height: normal;
+    
+}
+
+p{
+    margin-bottom: 0%;
+}
+
+.redes{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+    padding: auto0px;
+    border:0px;
+}
+
+h3{
+    color:rgb(255, 255, 255);
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    margin-top:20px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 400; 
+    font-size: 15px;
+}
+
+.facebook img{
+        max-width: 30px;
+        max-height: 30px;
+        margin: 10px;
+        margin-top:5px;
+    }
+
+.instagram img{
+    max-width: 30px;
+    max-height: 30px;
+    }  
+
+}    
+        
+
+    @media (max-width: 320px) {
+
+        a:link{ color: #ffffff; text-decoration: none}
+    
+        a:active{ color: #5a5a5a; text-decoration: none}
+    
+        a:visited{ color: #b8b1b1; text-decoration: none}
+    
+        a:hover{ color: hsl(61, 100%, 50%); font-size: 17px}
+    
+    html{
+        background-image: url(../img/fondo-sitio.jpg);
+    }
+    
+    /* MEDIA QUERIE (320 PX) DEL ENCABEZADO + NAV */
+    
+    .grid-container{
+        display:flex;
+        flex-direction: column;
+        }
+    
+    .encabezado{
+        display:flex;
+        width: 320px;
+        justify-content:center;
+        grid-area: header;
+        background-image:url(../img/header_fondo.png);
+    }
+    
+    .logo_mafs{
+        width: 250px;
+        height: 140px;
+        margin-top:15px;
+        padding-bottom:20px;
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    nav ul.menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 50%);
+    }
+    
+    nav .menu li{
+        display: flex;
+        text-underline-offset: none;
+        list-style: none;
+        margin: 3px;
+        border: solid 1px gold;
+        border-radius: 6px;
+        font-family: 'DynaPuff', cursive;
+        font-weight:400;
+        font-size: 15px;
+        width: 300px;
+        justify-content: space-evenly;
+
+        
+    }
+    
+    /* MEDIA QUERIE (320 PX) DE LA PÁGINA INDEX */
+    
+    .section {
+        display: flex;
+        width:auto;
+        flex-direction: column;
+        background-color:rgb(121, 196, 113, 60%);
+        border-radius: 10px;
+        margin: 30px;
+    }
+    
+    h1 {
+        display: flex;
+        color:rgb(255, 238, 0);
+        padding: 0px;
+        padding-bottom: 10px;
+        margin-left:0px;
+        font-size: 15px;
+        font-family: 'DynaPuff', cursive;
+        font-weight: 500;
+    }
+        
+    h2{
+        display: flex;
+        color:rgb(255, 238, 0);
+        padding-top: 10px;
+        padding-left:20px;
+        padding-bottom: 10px;
+        margin-top:20px;
+        margin-left: auto;
+        margin-bottom: 10px;
+        font-size: 17px;
+        font-family: 'DynaPuff', cursive;
+        font-weight: 400;
+        
+    }
+
+    .section{
+        width: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    p.textoNosotros{  
+        display: flex;
+        color:rgb(241, 233, 233);
+        padding:0px;  
+        margin: 0%;
+        padding: 20px;
+        font-family: "MAFS";
+        font-size: 13px;
+    }
+    
+    .aside {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    iframe{
+        display: flex;
+        width: 300px;
+        height: 150px;
+        margin-left: 10px;
+    }
+    hr{
+
+        width:500px;
+        margin: 10px;
+        margin-left:0px;
+    }
+    
+    /* Footer */
+    
+    footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 300px;
+        margin: 15px;
+        border-radius: 10px;
+    }
+
+    .menuFooter{
+        display: none;
+    }
+    
+    .direccion p{
+        display:flex;
+        flex-direction: column;
+
+        font-size:13px;
+        padding:7px;
+        border:none;
+        margin: none;
+        
+    }
+    
+    .redes{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: -50px;
+        padding: auto0px;
+        border:0px;
+    }
+    
+    h3{
+        display: none;}
+    
+    .facebook img{
+            max-width: 30px;
+            max-height: 30px;
+            margin: 10px;
+            margin-top:5px;
+        }
+    
+    .instagram img{
+        max-width: 30px;
+        max-height: 30px;
+        }
+    }
+
+/*...........MEDIA QUERIES PRODUCTOS 320PX..........*/
+
+
+    @media (max-width: 320px) {
+
+    .grid-container_productos{
+    display: flex;
+    flex-direction: column;
     
     }
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    nav ul.menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 50%);
+    }
+    
+    nav .menu li{
+        display: flex;
+        text-underline-offset: none;
+        list-style: none;
+        margin: 3px;
+        border: solid 1px gold;
+        border-radius: 6px;
+        font-family: 'DynaPuff', cursive;
+        font-weight:400;
+        font-size: 15px;
+        width: 300px;
+        justify-content: center;
+        
+    }   
+
+    .section {
+        background-color:rgb(121, 196, 113, 60%);
+        border-radius: 10px;
+        margin: 30px;
+    }
+    
+    h1 {
+        color:rgb(255, 238, 0);
+        padding: 20px;
+        padding-bottom: 10px;
+        margin-left:20px;
+        font-size: 30px;
+        font-family: 'DynaPuff', cursive;
+        font-weight: 500;
+    }
+        
+    h2{
+        color:rgb(255, 238, 0);
+        padding-top: 10px;
+        padding-left: 0px;
+        padding-bottom: 10px;
+        margin-top:20px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+        font-family: 'DynaPuff', cursive;
+        font-weight: 400;
+        
+    }
+    
+    p{
+        color:rgb(241, 233, 233);
+        padding:40px;  
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-family: "MAFS";
+        font-size: 16px;
+    }
+    
+    .aside {
+    margin:auto;
+    
+    }
+    
+    hr{
+        width:500px;
+        margin: 10px;
+        margin-left:0px;
+    }
+    
+    /* Footer */
+    
+    footer{
+        display: flex;
+        align-items: center;
+        max-width: 600px;
+        background-color: rgba(255, 145, 0, 0.60);
+        padding: 1rem; 
+        margin: 15px;
+        border-radius: 10px;
+        justify-content: space-evenly;
+    
+    }
+    
+    footer .menuFooter li{
+        list-style: none;
+        margin-left: 15px;
+        border-radius: 6px;
+        font-family: 'DynaPuff', cursive;
+        font-weight:400;
+        font-size: 16px;
+        
+    }
+    
+    .linkFooter{
+        display: flex;
+    
+    }
+    
+    .direccion p{
+        display:flex;
+        flex-direction: column;
+        font-size:13px;
+        padding:7px;
+        border:none;
+        margin: none;
+        
+    }
+    
+    .redes{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -50px;
+        padding: auto0px;
+        border:0px;
+    }
+    
+    h3{
+        color:rgb(255, 255, 255);
+        padding-top: 10px;
+        padding-left: 0px;
+        padding-bottom: 10px;
+        margin-top:20px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+        font-family: 'DynaPuff', cursive;
+        font-weight: 400; 
+        font-size: 15px;
+    }
+    
+    .facebook img{
+            max-width: 30px;
+            max-height: 30px;
+            margin: 10px;
+            margin-top:5px;
+        }
+    
+    .instagram img{
+        max-width: 30px;
+        max-height: 30px;
+        }
+    
+    }
+
+
+/*......... MEDIA QUERIES SABÍAS QUE 320PX ...........*/
+
+@media (max-width: 320px) {
+
+    .grid-container_sabias-que {
+        display:flex;
+        flex-direction: column;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        column-gap: 1rem;
+        min-height: 100vh;
+        }
+
+        
+        .section__globas-arriba{
+            display:flex;
+            flex-direction:row;
+            gap: 2rem; 
+            grid-area: globasArriba;
+
+        }
+    
+        .section__globas-abajo{
+            display:flex;
+            flex-direction:row;
+            gap: 2rem;
+            grid-area: globasAbajo;
+        }
+        
+        .imagen{
+            width: 100%; 
+        }  
+        .tarjeta_sabias-torre{
+            background-color: rgb(0, 0, 0, 1%);
+            text-align: center;
+            margin-top: 20px;
+            }
+            
+        .tarjeta_sabias-abecedario{
+            background-color: rgb(0, 0, 0, 1%);
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        .tarjeta_sabias-cubos{
+            background-color: rgb(0, 0, 0, 1%);
+            text-align: center;
+    
+        }
+    
+        .tarjeta_sabias-puzzle{
+            background-color: rgb(0, 0, 0, 1%);
+            justify-content: auto;
+            text-align: center center;
+        }
+
+        .negroTorres{
+            width: 400px;
+            color: black;
+            position: absolute;
+            margin-top: 100px;
+        }
+
+        .negroAbc{
+            color: black;
+            width: 400px;
+            color: black;
+            position: absolute;
+            margin-top: 100px;
+        }
+
+        .negroCubos{
+            color: black;
+            width: 400px;
+            color: black;
+            position: absolute;
+            margin-top: 100px;
+        }
+
+        .negroGloba{
+            color: black;
+            width: 400px;
+            color: black;
+            position: absolute;
+            margin-top: 100px;
+        }
+    }
+
+    @media (max-width: 320px) {    
+
+/* ......... EXPERIENCIAS QUERIE 320PX ............*/
+
+.grid-container_experiencias {
+    display:flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 1rem;
+    min-height: 100vh;
+    }
+
+    
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+    }
+    
+    nav .menu {
+        display: flex;
+        max-width: 320px;
+        height: 70px;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 50%);
+    }
+    
+    nav .menu li{
+        display: flex;
+        text-underline-offset: none;
+        list-style: none;
+        padding: 10px;
+        border: solid 1px gold;
+        border-radius: 6px;
+        font-family: 'DynaPuff', cursive;
+        font-weight:400;
+        font-size: 16px;
+        
+    }
+    
+    .linkMenu{
+        transition: font-size 1s;
+    }
+    
+    .linkMenu:hover{
+        color:gold;
+        font-size: 17px;
+    }
+
+section.experiencias{
+        display:flex;
+        flex-direction:column;
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0%;
+        padding-left: 0%;
+        
+}
+
+.h2Exp{
+    display: flex;
+    font-size: 20px;
+    margin:30px;
+    margin-left:35px;
+}
+
+    .tarjetaExperiencias{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+        margin-right:20px;
+        border-radius: 6px;
+    }
+
+    .textoExperiencia{
+        display:flex;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        margin-right: 25px;
+    }
+
+    .imagen_exp{
+        display:flex;
+        width: 100%;
+        margin-right: 25px;
+
+    }
+
+    footer{
+        display:flex;
+        min-width: 100%;
+        background-color: rgba(255, 145, 0, 0.60);
+        margin-top: 15px;
+        margin-left: auto;
+        border-radius: 10px;
+        justify-content: space-evenly;
+    
+    }
+
+    }
+
+/* ......... CONTACTO QUERIE 320PX ............*/
+
+@media (max-width: 320px) {
+
+.grid-container_contacto {
+    display:flex;
+    flex-direction: column;
+    margin: 0px;
+    max-width: 320px;
+    margin-left: 0PX;
+    margin-right: 0PX;
+    column-gap: 1rem;
+    min-height: 100vh;
+    }
+
+    .encabezado{
+        display: flex;
+        width: 320px;
+        min-height: 170px;
+        justify-content:center;
+        grid-area: header;
+        background-image:url(../img/header_fondo.png);
+    }
+    
+    .logo_mafs{
+        display: flex;
+        width: auto;
+        padding-bottom: 20px;
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+    }
+    
+    nav .menu {
+        display: flex;
+        max-width: 300px;
+        height: 70px;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 50%);
+    }
+    
+    nav .menu li{
+        display: flex;
+        text-underline-offset: none;
+        list-style: none;
+        padding: 10px;
+        border: solid 1px gold;
+        border-radius: 6px;
+        font-family: 'DynaPuff', cursive;
+        font-weight:400;
+        font-size: 16px;
+        
+    }
+
+    ul .menu{
+        padding: ;
+        margin: auto;
+    }
+    
+    .linkMenu{
+        transition: font-size 1s;
+    }
+    
+    .linkMenu:hover{
+        color:gold;
+        font-size: 17px;
+    }
+    
+.infoContacto{
+    display:flex;
+    flex-direction: column;
+    max-width: 100%;
+    background-color: rgb(69, 160, 73, 60%);
+    border-radius: 10px;
+    margin-top: 20px;
+    grid-area: section1;
+    }
+
+.tituloContacto{
+    display:flex;
+    font-size: 23px;
+    margin: 42px;
+    margin-bottom: 5px;
+}  
+
+p.parrafoContacto{
+    display:flex;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin:0px;
+    line-height: 1.5rem;
+    
+}
+
+.logo_ms{
+    display:flex;
+    width: 30%;
+    margin: 42px;
+    margin-top: 0px;
+}
+
+.formulario{
+    display:flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin-top: 20px;
+    
+}
+
+input, textarea {
+        display: flex;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+
+input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    label {
+        font-weight: 200;
+        display: flex;
+        margin-bottom: 10px;
+        color: #ffffff;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    textarea {
+        display:flex;
+        width: 100%;
+    }
+
+    .dropdown-menu{
+        font-size: 15px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: black;
+        background-color: rgb(0, 0, 0,80%);
+    }
+
+    .dropdown-item:hover{
+        font-size: 16px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0,80%);
+    }
+
+footer{
+    display: flex;
+    flex-direction: row;
+    width: 320px;
+    align-items: center;
+    background-color: rgba(255, 145, 0, 0.60);
+    grid-area: footer;
+    border-radius: 10px;
+    justify-content: space-evenly;
+
+}
+
+ul.menuFooter_contacto{
+    display: none;
+
+}
+
+
+footer.direccion__p{
+    display:flex;
+    flex-direction: column;
+    font-size:13px;
+    padding:7px;
+    border:none;
+    margin: none;
+    padding: none;
+    line-height: normal;
+    
+}
+
+p{
+    margin-bottom: 0%;
+}
+
+.redes{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+    padding: auto0px;
+    border:0px;
+}
+
+h3{
+    color:rgb(255, 255, 255);
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    margin-top:20px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 400; 
+    font-size: 15px;
+}
+
+.facebook img{
+        max-width: 30px;
+        max-height: 30px;
+        margin: 10px;
+        margin-top:5px;
+    }
+
+.instagram img{
+    max-width: 30px;
+    max-height: 30px;
+    }
+
+}

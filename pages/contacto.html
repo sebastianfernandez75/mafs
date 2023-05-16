@@ -6,34 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIENVENIDOS A MAFS!</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 <body>
     
-    <div class="grid-container">
-        <div class="header" alt="contenedor"><img src="../img/header.png" alt="Encabezado"></div>
+    <div class="grid-container_contacto">
+    
+        <header class="encabezado">
+            <img src="/img/logo_mafs.png" class="logo_mafs"alt="Logo MAFS">
+        
+        </header>
+
         <nav>
             <ul class="menu">
-                <li><a href="../index.html" alt="Nosotros">NOSOTROS</a></li>
-                <li><a href="productos.html" alt="Productos">PRODUCTOS</a></li>
-                <li><a href="sabias-que.html" alt="Sabías que. . .">SABÍAS QUE...</a></li>
-                <li><a href="experiencias.html" alt="Experiencias">EXPERIENCIAS</a></li>
-                <li><a href="contacto.html" alt="Contacto">CONTACTO</a></li>
+                <li><a href="../index.html" class="linkMenu" alt="Nosotros">NOSOTROS</a></li>
+                <li><a href="productos.html" class="linkMenu" alt="Productos">PRODUCTOS</a></li>
+                <li><a href="sabias-que.html" class="linkMenu" alt="Sabías que. . .">SABÍAS?</a></li>
+                <li><a href="experiencias.html" class="linkMenu" alt="Experiencias">EXPERIENCIAS</a></li>
+                <li><a href="contacto.html" class="linkMenu" alt="Contacto">CONTACTO</a></li>
             </ul>
         </nav>
         
-        <h1>Servicios</h1>
+            <section class="infoContacto">
+                <h2 class="tituloContacto">Comunicate con nosotros!</h2>
+                <p class="parrafoContacto">Mandanos tu consulta a través de nuestro Whatsapp (+5411-5631-5774) <br> ó por mail a: creacionesmafs@gmail.com
+                Atendemos de Lunes a Viernes de 9.00hs a 19.00hs.
+                <br>
+                Nuestra tienda virtual virtual la podés encontrar en:
+                </p>
+                <img src="/img/mercado-shops-logo.png" class="logo_ms"alt="MERCADO SHOPS">
+            </section>
+            
+            <section class="formulario">
+                <h2> Hacenos tu consulta:</h2>
 
-
+                <form action="#" method="post">
+                    <label for="nombre">Nombre y Apellido:</label>
+                    <input type="text" id="nombre" name="nombre" required>
         
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+            
+                    <label for="celular">Celular:</label>
+                    <input type="tel" id="celular" name="celular" required>
+
+                    <label for="desplegable">
+                        <div class="dropdown">Por cual producto querés consultar?
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Opciones
+                            </button>
+                            <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cuadros selfies</a></li>
+                            <li><a class="dropdown-item" href="#">Souvenirs</a></li>
+                            <li><a class="dropdown-item" href="#">Juegos didácticos</a></li>
+                            </ul>
+                        </div>
+                    </label>
+                    
+            
+                    <label for="mensaje">Dejá tu mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+
+                    <input type="submit" value="Enviar">
+|           </section>
+
         <footer>
-            <ul class="menuFooter">
-                <li><a href="../index.html" alt="Nosotros">NOSOTROS</a></li>
-                <li><a href="productos.html" alt="Productos">PRODUCTOS</a></li>
-                <li><a href="sabias-que.html" alt="Sabías que. . .">SABÍAS QUE...</a></li>
-                <li><a href="experiencias.html" alt="Experiencias">EXPERIENCIAS</a></li>
-                <li><a href="contacto.html" alt="Contacto">CONTACTO</a></li>
+            <ul class="menuFooter_contacto">
+                <li><a href="../index.html" class="linkFooter_contacto" alt="Nosotros">NOSOTROS</a></li>
+                <li><a href="productos.html" class="linkFooter_contacto" alt="Productos">PRODUCTOS</a></li>
+                <li><a href="sabias-que.html" class="linkFooter_contacto" alt="Sabías que. . .">SABÍAS QUE...</a></li>
+                <li><a href="experiencias.html" class="linkFooter_contacto" alt="Experiencias">EXPERIENCIAS</a></li>
+                <li><a href="contacto.html" class="linkFooter_contacto"alt="Contacto">CONTACTO</a></li>
             </ul>
 
             <div class="direccion">
@@ -46,24 +92,25 @@
                 
             <div class="redes">
                 <h3>REDES</h3>
-
-                    <div class="facebook">
-                        <a href="http://www.facebook.com/creaciones_mafs" target="_blank">
-                            <img src="../img/facebook.png" alt="Facebook de creaciones MAFS">
-                        </a>
-
-                    </div>
-                    <div class="instagram">
-                        <a href="http://www.instagram.com/creaciones_mafs" target="_blank">
-                            <img src="../img/ig.png" alt="Instagram de creaciones MAFS">
-                        </a>
-                        
-                    </div>
+    
+                        <div class="facebook">
+                            <a href="http://www.facebook.com/creaciones_mafs" target="_blank">
+                                <img src="../img/facebook.png" alt="Facebook de creaciones MAFS">
+                            </a>
+    
+                        </div>
+                        <div class="instagram">
+                            <a href="http://www.instagram.com/creaciones_mafs" target="_blank">
+                                <img src="../img/ig.png" alt="Instagram de creaciones MAFS">
+                            </a>
+                            
+                        </div>
+                </div>
             </div>
             
         </footer>
     </div>
     
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body> 
 </html>
